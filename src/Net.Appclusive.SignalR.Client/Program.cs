@@ -30,14 +30,14 @@ namespace Net.Appclusive.SignalR.Client
             var hubConnection = new HubConnection(APPCLUSIVE_BASE_URI);
             var workerHubProxy = hubConnection.CreateHubProxy(nameof(IWorkerHub).TrimStart('I'));
             
-            var worker = new Worker();
+            var worker = new WorkerClient();
             var workerHub = new WorkerHubBase(workerHubProxy);
 
             // register for an event
-            workerHubProxy.On<string>(nameof(IWorker.ProcessWorkItem), worker.ProcessWorkItem);
+            workerHubProxy.On<string>(nameof(IWorkerClient.ProcessWorkItem), worker.ProcessWorkItem);
 
             hubConnection.Start().Wait();
-            
+
             while (true)
             {
                 // call method on server

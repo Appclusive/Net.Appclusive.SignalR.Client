@@ -19,7 +19,7 @@ using Net.Appclusive.Public.SignalR;
 
 namespace Net.Appclusive.SignalR.Client
 {
-    public class Worker : IWorker
+    public class WorkerClient : IWorkerClient
     {
         public void ProcessWorkItem(string message)
         {
