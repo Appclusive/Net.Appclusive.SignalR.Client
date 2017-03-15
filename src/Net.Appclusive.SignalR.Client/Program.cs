@@ -14,38 +14,37 @@
  * limitations under the License.
  */
 
-using System;
 using System.Threading;
 using Microsoft.AspNet.SignalR.Client;
 using Net.Appclusive.Public.SignalR;
 
 namespace Net.Appclusive.SignalR.Client
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        private const string APPCLUSIVE_BASE_URI = "http://appclusive/";
+
+        public static void Main(string[] args)
         {
-            var hubConnection = new HubConnection("http://appclusive/");
-            IHubProxy workerHubProxy = hubConnection.CreateHubProxy("WorkerHub");
+            // initialise connection & proxy
+            var hubConnection = new HubConnection(APPCLUSIVE_BASE_URI);
+            var workerHubProxy = hubConnection.CreateHubProxy(nameof(IWorkerHub).TrimStart('I'));
             
+            var worker = new Worker();
+            var workerHub = new WorkerHubBase(workerHubProxy);
+
             // register for an event
-            workerHubProxy.On<string>("ProcessWorkItem", ProcessWorkItem);
+            workerHubProxy.On<string>(nameof(IWorker.ProcessWorkItem), worker.ProcessWorkItem);
 
             hubConnection.Start().Wait();
             
-
             while (true)
             {
                 // call method on server
-                workerHubProxy.Invoke(nameof(IWorkerHub.NotifyServer), "Hi server").Wait();
+                workerHub.NotifyServer("Hi Server");
 
                 Thread.Sleep(20 * 1000);
             }
-        }
-
-        private static void ProcessWorkItem(string message)
-        {
-            Console.WriteLine(message);
         }
     }
 }
