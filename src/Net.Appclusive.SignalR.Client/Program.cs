@@ -25,11 +25,11 @@ namespace Net.Appclusive.SignalR.Client
         {
             var hubConnection = new HubConnection("http://appclusive/");
             IHubProxy stockTickerHubProxy = hubConnection.CreateHubProxy("WorkerHub");
-            stockTickerHubProxy.On<string>("NotifyServer", ProcessMessage);
+            stockTickerHubProxy.On<string>("ProcessWorkItem", ProcessWorkItem);
             hubConnection.Start();
         }
 
-        private static void ProcessMessage(string message)
+        private static void ProcessWorkItem(string message)
         {
             Console.WriteLine(message);
         }
