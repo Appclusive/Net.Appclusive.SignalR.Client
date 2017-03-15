@@ -23,7 +23,7 @@ namespace Net.Appclusive.SignalR.Client
     {
         static void Main(string[] args)
         {
-            var hubConnection = new HubConnection("http://localhost:53344/");
+            var hubConnection = new HubConnection("http://appclusive/");
             IHubProxy workerHubProxy = hubConnection.CreateHubProxy("WorkerHub");
             
             // register for an event
