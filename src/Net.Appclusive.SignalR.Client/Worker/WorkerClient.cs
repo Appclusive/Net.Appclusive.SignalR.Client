@@ -14,26 +14,16 @@
  * limitations under the License.
  */
 
-using System.Diagnostics.Contracts;
-using Microsoft.AspNet.SignalR.Client;
+using System;
 using Net.Appclusive.Public.SignalR;
 
-namespace Net.Appclusive.SignalR.Console
+namespace Net.Appclusive.SignalR.Client.Worker
 {
-    public class WorkerHubBase : IWorkerHub
+    public class WorkerClient : IWorkerClient
     {
-        private readonly IHubProxy workerHubProxy;
-
-        public WorkerHubBase(IHubProxy proxy)
+        public void ProcessWorkItem(string message)
         {
-            Contract.Requires(null != proxy);
-
-            this.workerHubProxy = proxy;
-        }
-
-        public void NotifyServer(string message)
-        {
-            workerHubProxy.Invoke(nameof(IWorkerHub.NotifyServer), message).Wait();
+            Console.WriteLine(@"'{0}' - Received message from server: '{1}'", DateTimeOffset.Now, message);
         }
     }
 }

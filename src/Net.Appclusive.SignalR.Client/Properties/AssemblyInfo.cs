@@ -20,8 +20,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Net.Appclusive.SignalR.Console")]
-[assembly: AssemblyProduct("Net.Appclusive.SignalR.Console")]
+[assembly: AssemblyTitle("Net.Appclusive.SignalR.Client")]
+[assembly: AssemblyProduct("Net.Appclusive.SignalR.Client")]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e18ec64b-3b3e-4826-80fd-827903c9f6ff")]
+[assembly: Guid("8482c98b-48cd-49b8-9ec7-86e3e976d47d")]

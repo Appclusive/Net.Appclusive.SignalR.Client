@@ -4,18 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E18EC64B-3B3E-4826-80FD-827903C9F6FF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{8482C98B-48CD-49B8-9EC7-86E3E976D47D}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Net.Appclusive.SignalR.Console</RootNamespace>
-    <AssemblyName>Net.Appclusive.SignalR.Console</AssemblyName>
+    <RootNamespace>Net.Appclusive.SignalR.Client</RootNamespace>
+    <AssemblyName>Net.Appclusive.SignalR.Client</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -68,7 +66,6 @@
     <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -141,22 +138,19 @@
     <Compile Include="..\CommonAssemblySettings.cs">
       <Link>Properties\CommonAssemblySettings.cs</Link>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Compile Include="Worker\WorkerClient.cs" />
+    <Compile Include="Worker\WorkerHubBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Net.Appclusive.Public\src\Net.Appclusive.Public\Net.Appclusive.Public.csproj">
       <Project>{5ed5a163-5cbf-4a5b-913a-51bce3e1b6da}</Project>
       <Name>Net.Appclusive.Public</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Net.Appclusive.SignalR.Client\Net.Appclusive.SignalR.Client.csproj">
-      <Project>{8482c98b-48cd-49b8-9ec7-86e3e976d47d}</Project>
-      <Name>Net.Appclusive.SignalR.Client</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

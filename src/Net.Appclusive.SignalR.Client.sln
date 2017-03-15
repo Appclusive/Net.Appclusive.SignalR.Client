@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.SignalR.Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.Public", "..\..\Net.Appclusive.Public\src\Net.Appclusive.Public\Net.Appclusive.Public.csproj", "{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.SignalR.Client", "Net.Appclusive.SignalR.Client\Net.Appclusive.SignalR.Client.csproj", "{8482C98B-48CD-49B8-9EC7-86E3E976D47D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Versioning", "Versioning", "{089960F6-FB65-44A8-BB20-061D2423C5B7}"
+	ProjectSection(SolutionItems) = preProject
+		CommonAssemblySettings.cs = CommonAssemblySettings.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +28,10 @@ Global
 		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8482C98B-48CD-49B8-9EC7-86E3E976D47D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8482C98B-48CD-49B8-9EC7-86E3E976D47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8482C98B-48CD-49B8-9EC7-86E3E976D47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8482C98B-48CD-49B8-9EC7-86E3E976D47D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
