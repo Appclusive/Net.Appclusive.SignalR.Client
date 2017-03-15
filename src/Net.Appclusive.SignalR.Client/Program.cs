@@ -25,8 +25,13 @@ namespace Net.Appclusive.SignalR.Client
         {
             var hubConnection = new HubConnection("http://localhost:53344/");
             IHubProxy workerHubProxy = hubConnection.CreateHubProxy("WorkerHub");
+            
+            // register for an event
             workerHubProxy.On<string>("ProcessWorkItem", ProcessWorkItem);
             hubConnection.Start();
+
+            // call method on server
+            workerHubProxy.Invoke("NotifyServer", "Hi server");
 
             while (true)
             {
