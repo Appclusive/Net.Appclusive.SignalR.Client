@@ -29,7 +29,7 @@ namespace Net.Appclusive.SignalR.Client
             // register for an event
             workerHubProxy.On<string>("ProcessWorkItem", ProcessWorkItem);
 
-            hubConnection.Start();
+            hubConnection.Start().Wait();
             
             // call method on server
             workerHubProxy.Invoke("NotifyServer", "Hi server");
