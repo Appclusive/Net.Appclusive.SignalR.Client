@@ -32,7 +32,7 @@ namespace Net.Appclusive.SignalR.Client
             hubConnection.Start().Wait();
             
             // call method on server
-            workerHubProxy.Invoke("NotifyServer", "Hi server");
+            workerHubProxy.Invoke("NotifyServer", "Hi server").Wait();
 
             while (true)
             {
