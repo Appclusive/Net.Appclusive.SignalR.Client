@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.SignalR.Client", "Net.Appclusive.SignalR.Client\Net.Appclusive.SignalR.Client.csproj", "{E18EC64B-3B3E-4826-80FD-827903C9F6FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net.Appclusive.Public", "..\..\Net.Appclusive.Public\src\Net.Appclusive.Public\Net.Appclusive.Public.csproj", "{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E18EC64B-3B3E-4826-80FD-827903C9F6FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E18EC64B-3B3E-4826-80FD-827903C9F6FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E18EC64B-3B3E-4826-80FD-827903C9F6FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED5A163-5CBF-4A5B-913A-51BCE3E1B6DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

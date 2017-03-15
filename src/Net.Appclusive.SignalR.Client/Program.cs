@@ -17,6 +17,7 @@
 using System;
 using System.Threading;
 using Microsoft.AspNet.SignalR.Client;
+using Net.Appclusive.Public.SignalR;
 
 namespace Net.Appclusive.SignalR.Client
 {
@@ -36,7 +37,7 @@ namespace Net.Appclusive.SignalR.Client
             while (true)
             {
                 // call method on server
-                workerHubProxy.Invoke("NotifyServer", "Hi server").Wait();
+                workerHubProxy.Invoke(nameof(IWorkerHub.NotifyServer), "Hi server").Wait();
 
                 Thread.Sleep(20 * 1000);
             }
