@@ -15,10 +15,7 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.AspNet.SignalR.Client;
 
 namespace Net.Appclusive.SignalR.Client
 {
@@ -26,6 +23,10 @@ namespace Net.Appclusive.SignalR.Client
     {
         static void Main(string[] args)
         {
+            var hubConnection = new HubConnection("http://appclusive/");
+            IHubProxy stockTickerHubProxy = hubConnection.CreateHubProxy("WorkerHub");
+            stockTickerHubProxy.On<string>("NotifyServer", message => Console.WriteLine(message));
+            hubConnection.Start();
         }
     }
 }
