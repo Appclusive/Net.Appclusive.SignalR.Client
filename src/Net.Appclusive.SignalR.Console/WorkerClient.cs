@@ -17,7 +17,7 @@
 using System;
 using Net.Appclusive.Public.SignalR;
 
-namespace Net.Appclusive.SignalR.Client
+namespace Net.Appclusive.SignalR.Console
 {
     public class WorkerClient : IWorkerClient
     {

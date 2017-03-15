@@ -18,7 +18,7 @@ using System.Threading;
 using Microsoft.AspNet.SignalR.Client;
 using Net.Appclusive.Public.SignalR;
 
-namespace Net.Appclusive.SignalR.Client
+namespace Net.Appclusive.SignalR.Console
 {
     public class Program
     {
