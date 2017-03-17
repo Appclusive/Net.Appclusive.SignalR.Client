@@ -15,15 +15,22 @@
  */
 
 using System;
+using Net.Appclusive.Public.Domain.General;
 using Net.Appclusive.Public.SignalR;
+using Newtonsoft.Json;
 
 namespace Net.Appclusive.SignalR.Client.Worker
 {
     public class WorkerClient : IWorkerClient
     {
-        public void ProcessWorkItem(string message)
+        public void ProcessMessage(string value)
         {
-            Console.WriteLine(@"'{0}' - Received message from server: '{1}'", DateTimeOffset.Now, message);
+            Console.WriteLine(@"'{0}' - Received message from server: '{1}'", DateTimeOffset.Now, value);
+        }
+
+        public void ProcessWorkItem(WorkItem workItem)
+        {
+            Console.WriteLine(@"'{0}' - Received workItem from server: '{1}'", DateTimeOffset.Now, JsonConvert.SerializeObject(workItem));
         }
     }
 }

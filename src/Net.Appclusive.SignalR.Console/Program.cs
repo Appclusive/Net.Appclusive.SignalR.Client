@@ -16,6 +16,7 @@
 
 using System.Threading;
 using Microsoft.AspNet.SignalR.Client;
+using Net.Appclusive.Public.Domain.General;
 using Net.Appclusive.Public.SignalR;
 using Net.Appclusive.SignalR.Client.Worker;
 
@@ -35,7 +36,8 @@ namespace Net.Appclusive.SignalR.Console
             var workerHub = new WorkerHubBase(workerHubProxy);
 
             // register for an event
-            workerHubProxy.On<string>(nameof(IWorkerClient.ProcessWorkItem), worker.ProcessWorkItem);
+            workerHubProxy.On<string>(nameof(IWorkerClient.ProcessMessage), worker.ProcessMessage);
+            workerHubProxy.On<WorkItem>(nameof(IWorkerClient.ProcessWorkItem), worker.ProcessWorkItem);
 
             hubConnection.Start().Wait();
 
